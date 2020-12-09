@@ -21,8 +21,8 @@ Features:
 * Give the bot permission to read messages
 * Specify in the program settings bot_token (with the prefix bot) and group chat_id in the program settings (find out the chat_id here https://api.telegram.org/botXXX:XXX/getUpdates)
 
-For work, you need to "compile" BAT files with any bat to exe converter (for example, converter by Fatih Kodak). You can do without conversion, but you will need to make edits to the code.
-Timer (timer.rs) is written in Rust, compile via cargo.
+For work, you need to "compile" BAT files with any bat to exe converter (for example, converter by Fatih Kodak). You can do without conversion, but you will need to make edits to the code.  
+Timer (timer.rs) is written in Rust, compile via cargo.  
 In dependencies: curl, bc, grep, head, tail.
 
 ____
