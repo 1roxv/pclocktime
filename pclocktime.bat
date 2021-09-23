@@ -1,36 +1,3 @@
-::[Bat To Exe Converter]
-::
-::YAwzoRdxOk+EWAjk
-::fBw5plQjdCqDJGyX8VAMDB5HRxCNLFeOL5g5qdTo4P+VoUghROEzd4zQzr2DJa4a6UqE
-::YAwzuBVtJxjWCl3EqQJgSA==
-::ZR4luwNxJguZRRnk
-::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSDk=
-::cBs/ulQjdF+5
-::ZR41oxFsdFKZSDk=
-::eBoioBt6dFKZSDk=
-::cRo6pxp7LAbNWATEpCI=
-::egkzugNsPRvcWATEpCI=
-::dAsiuh18IRvcCxnZtBJQ
-::cRYluBh/LU+EWAnk
-::YxY4rhs+aU+JeA==
-::cxY6rQJ7JhzQF1fEqQJQ
-::ZQ05rAF9IBncCkqN+0xwdVs0
-::ZQ05rAF9IAHYFVzEqQJQ
-::eg0/rx1wNQPfEVWB+kM9LVsJDGQ=
-::fBEirQZwNQPfEVWB+kM9LVsJDGQ=
-::cRolqwZ3JBvQF1fEqQJQ
-::dhA7uBVwLU+EWDk=
-::YQ03rBFzNR3SWATElA==
-::dhAmsQZ3MwfNWATElA==
-::ZQ0/vhVqMQ3MEVWAtB9wSA==
-::Zg8zqx1/OA3MEVWAtB9wSA==
-::dhA7pRFwIByZRRnk
-::Zh4grVQjdCqDJGyX8VAMDB5HRxCNLFeOL5g5qdTr7OaIoUYJXe86NorD39Q=
-::YB416Ek+ZG8=
-::
-::
-::978f952a14a936cc963da21a135fa983
 @echo off
 title PCLockTime
 
@@ -129,12 +96,12 @@ if exist %workfolder%\settings.txt (goto showtime) else (goto settings)
 	
 	:greptail
 		call :date
-		for /F %%s in ('grep -Eo [0-9]+ %workfolder%/%date%.txt ^| tail -n1') do set greptail=%%s
+		for /F %%s in ('grep -Eo [-0-9]+ %workfolder%/%date%.txt ^| tail -n1') do set greptail=%%s
 		exit /b
 	
 	:grephead
 		call :date
-		for /F %%s in ('grep -Eo [0-9]+ %workfolder%/%date%.txt ^| head -n1') do set grephead=%%s
+		for /F %%s in ('grep -Eo [-0-9]+ %workfolder%/%date%.txt ^| head -n1') do set grephead=%%s
 		exit /b
 	
 	:timeleft
@@ -142,7 +109,7 @@ if exist %workfolder%\settings.txt (goto showtime) else (goto settings)
 		for /F %%s in ('echo %greptail% / 60 ^| bc') do set var1=%%s
 		for /F %%s in ('echo %greptail% - %var1% * 60 ^| bc') do set var2=%%s
 		for /F %%s in ('echo %var1% + %var2% * 0.01 ^| bc') do set timeleft=%%s
-		if %var1% lss 10 set timeleft=0%timeleft%
+		if %var1% LSS 10 set timeleft=0%timeleft%
 		exit /b
 		
 	:password
