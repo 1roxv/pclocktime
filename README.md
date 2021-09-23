@@ -1,6 +1,6 @@
 # PCLockTime
 ____
-## Parental Control for Windows 7-10
+## Parental Control for Windows 7-11
 
 You can control the time that you spent at the computer. It can be used both for children and for yourself.
 
@@ -26,7 +26,7 @@ Timer (timer.rs) is written in Rust, compile via cargo.
 In dependencies: curl, bc, grep, head, tail.
 
 ____
-## Родительский контроль для Windows 7-10
+## Родительский контроль для Windows 7-11
 
 Вы можете контролировать время проведенное за компьютером. Можно использовать как для детей, так и для себя.
 
